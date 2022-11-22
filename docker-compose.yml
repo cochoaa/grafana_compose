@@ -1,0 +1,12 @@
+version: '3.7'
+services:
+ grafana:
+  container_name: grafana_compose
+  image: grafana/grafana-enterprise:9.1.8
+  env_file:
+      - grafana.env
+  ports:
+      - '5015:3000'
+  volumes:
+      - ./data:/var/lib/grafana
+  user: "1000:1000"
